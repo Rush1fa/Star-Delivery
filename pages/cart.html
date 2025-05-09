@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Star Delivery</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Star Delivery</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="cart.html">Корзина</a></li>
+                    <li><a href="auth.html" id="auth-link">Войти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cart-container">
+        <div class="container">
+            <h1>Ваша корзина</h1>
+            
+            <div id="cartEmpty" style="display: none;">
+                <p>Ваша корзина пуста</p>
+                <a href="catalog.html" class="btn">Перейти в каталог</a>
+            </div>
+
+            <div id="cartContent">
+                <div class="cart-items" id="cartItems">
+                    <!-- Товары будут загружаться через JavaScript -->
+                </div>
+                
+                <div class="cart-summary">
+                    <h3>Итого: <span id="totalPrice">0</span> руб.</h3>
+                    <p id="minOrderMsg" style="color: red; display: none;">Минимальная сумма заказа 1000 руб.</p>
+                    <button id="checkoutBtn" class="btn">Оформить заказ</button>
+                    <button id="authRequiredBtn" class="btn" style="display: none;">Войти для заказа</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Star Delivery. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа - Star Delivery</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Star Delivery</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="cart.html">Корзина</a></li>
+                    <li><a href="auth.html" id="auth-link">Войти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="order-container">
+        <div class="container">
+            <h1>Оформление заказа</h1>
+            
+            <div class="order-content">
+                <div class="order-summary">
+                    <h3>Ваш заказ</h3>
+                    <div id="orderItems">
+                        <!-- Товары будут загружаться через JavaScript -->
+                    </div>
+                    <div class="order-total">
+                        <p>Итого: <span id="orderTotal">0</span> руб.</p>
+                    </div>
+                </div>
+
+                <div class="order-form">
+                    <form id="orderForm">
+                        <div class="form-group">
+                            <label for="deliveryTime">Время доставки</label>
+                            <input type="time" id="deliveryTime" min="10:00" max="20:00" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Способ оплаты</label>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="payment" value="cash" checked> Наличные
+                                </label>
+                                <label>
+                                    <input type="radio" name="payment" value="transfer"> Перевод
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="comment">Комментарий к заказу</label>
+                            <textarea id="comment" rows="3"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Подтвердить заказ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Star Delivery. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/order.js"></script>
+</body>
+</html>
