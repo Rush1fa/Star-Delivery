@@ -10,3 +10,5 @@ export const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Для теста (опционально)
 console.log("Supabase подключен:", supabase);
+
+window.supabase = supabase; // Только для разработки!
