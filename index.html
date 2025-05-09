@@ -59,5 +59,11 @@
     </footer>
 
     <script src="js/main.js"></script>
+    
+    <script type="module">
+      import { supabase } from './js/db.js';
+      window.supabase = supabase; // Делаем глобальным
+    </script>
+    
 </body>
 </html>
