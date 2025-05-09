@@ -39,3 +39,7 @@ async function displayProducts() {
 document.addEventListener('DOMContentLoaded', () => {
   displayProducts();
 });
+// Тестовый запрос
+supabase.from('products').select('*')
+  .then(response => console.log("Товары:", response.data))
+  .catch(error => console.error("Ошибка:", error));
