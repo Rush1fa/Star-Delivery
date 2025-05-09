@@ -1,21 +1,14 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { supabase } from './db.js';
 
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  projectId: "YOUR_PROJECT_ID"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-document.getElementById('productForm').addEventListener('submit', async (e) => {
+document.getElementById("add-product").addEventListener("submit", async (e) => {
   e.preventDefault();
-  
-  await addDoc(collection(db, 'products'), {
-    name: productName.value,
-    price: Number(productPrice.value),
-    category: productCategory.value,
-    imageUrl: 'путь_к_изображению' // После загрузки в Storage
-  });
+  const product = {
+    name: document.getElementById("name").value,
+    price: document.getElementById("price").value,
+    image_url: document.getElementById("image").value
+  };
+
+  const { error } = await supabase.from('products').insert([product]);
+  if (error) alert("Ошибка: " + error.message);
+  else alert("Товар добавлен!");
 });
